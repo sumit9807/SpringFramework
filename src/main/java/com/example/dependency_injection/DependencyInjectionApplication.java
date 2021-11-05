@@ -12,6 +12,11 @@ public class DependencyInjectionApplication {
 	public static void main(String[] args) {
 		// Getting object from Spring Context using Application Context object
 		ApplicationContext ctx = SpringApplication.run(DependencyInjectionApplication.class, args);
+		//WithProfileTest
+		System.out.println("-------- Profile Test");
+		ProfileController profileController =(ProfileController) ctx.getBean("profileController") ;
+		System.out.println(profileController.sayHello());
+		System.out.println("-------------");
 		//withDefault name
 		MyController controller = (MyController) ctx.getBean("myController");
 		System.out.println(controller.sayHello());
