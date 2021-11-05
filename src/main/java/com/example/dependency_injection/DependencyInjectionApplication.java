@@ -1,6 +1,7 @@
 package com.example.dependency_injection;
 
 import com.example.dependency_injection.controller_withSpring.*;
+import com.example.dependency_injection.service_withSpring.PrimaryBeanService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -29,6 +30,10 @@ public class DependencyInjectionApplication {
 		System.out.println("-------- Constructor Injected");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getMyHelloService());
+
+		System.out.println("-------- Primary Bean Injected");
+		PrimaryBeanController primaryBeanController = (PrimaryBeanController) ctx.getBean("primaryBeanController");
+		System.out.println(primaryBeanController.getMyHelloService());
 	}
 
 }
